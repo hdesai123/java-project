@@ -1,0 +1,40 @@
+package HospitalManagement;
+import java.util.*;
+
+public class Doctor {
+    String dName, dSpecialisation, dTiming;
+    int dRoom;
+    Scanner sc = new Scanner(System.in);
+
+    public void updateDoctorList(){
+        System.out.println("---------------------------------------------------");
+        System.out.print("Enter the Name: ");
+        dName = sc.nextLine();
+        System.out.print("Enter the Room Number: ");
+        dRoom = sc.nextInt();
+        System.out.print("Enter the Specialisation: ");
+        dSpecialisation = sc.next();
+        System.out.println("Enter the Timing: ");
+        sc.next();
+        System.out.println("---------------------------------------------------");
+    }
+
+    public void showDoctorList(){
+        System.out.println("-------------------------------------------------------------");
+        System.out.println("NAME"+ "\t\t\t" + "ROOM NO." + "\t" + "TIMING" + "\t\t" + "SPECIALIST");
+        System.out.println("_____________________________________________________________");
+        System.out.println();
+        System.out.println("Sanjay Mishra \t 201 \t 10:00-12:00 \t Cardiologist \nArjun Singh \t 302 \t 16:00-18:00 \t Neurologist \nSurbhi Anand \t 305 \t 12:00-14:00 \t Orthodontist \nAshish Mehra \t 202 \t 17:00-18:00 \t Urologist \nH.S Chhabra \t 101 \t 9:00-12:00 \t Endoscopic surgeon \nGaurav Kharya \t 105 \t 20:00-22:00 \t Pediatrician \nVikram Patel \t 301 \t 11:00-14:00 \t Psychiatrist \nKamal Verma \t 204 \t 10:00-12:00 \t Allergist \nNikhil Sheth \t 102 \t 16:00-19:00 \t Ophthalmologist \nVeena Jain \t\t 203 \t 18:00-21:00 \t Periodontist");
+        System.out.println(dName + "\t\t " + dRoom + " \t\t" + dTiming + " \t\t" + dSpecialisation);
+        System.out.println("-------------------------------------------------------------");
+    }
+
+    public void showDoctorList1(){
+        System.out.println("-------------------------------------------------------------");
+        System.out.println("NAME"+ "\t\t\t" + "ROOM NO." + "\t" + "TIMING" + "\t\t" + "SPECIALIST");
+        System.out.println("_____________________________________________________________");
+        System.out.println();
+        System.out.println("Sanjay Mishra \t 201 \t 10:00-12:00 \t Cardiologist \nArjun Singh \t 302 \t 16:00-18:00 \t Neurologist \nSurbhi Anand \t 305 \t 12:00-14:00 \t Orthodontist \nAshish Mehra \t 202 \t 17:00-18:00 \t Urologist \nH.S Chhabra \t 101 \t 9:00-12:00 \t Endoscopic surgeon \nGaurav Kharya \t 105 \t 20:00-22:00 \t Pediatrician \nVikram Patel \t 301 \t 11:00-14:00 \t Psychiatrist \nKamal Verma \t 204 \t 10:00-12:00 \t Allergist \nNikhil Sheth \t 102 \t 16:00-19:00 \t Ophthalmologist \nVeena Jain \t\t 203 \t 18:00-21:00 \t Periodontist");
+        System.out.println("-------------------------------------------------------------");
+    }
+}

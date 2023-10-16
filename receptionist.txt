@@ -1,0 +1,273 @@
+package HospitalManagement;
+
+import java.time.*;
+import java.util.*;
+
+class MainMenu {
+    public void MM() throws Exception {
+        System.out.println();
+        System.out.println("-----------------------");
+        System.out.println("\t \t MAIN MENU: ");
+        System.out.println("\n 1. Doctor \n 2. Patient \n 3. Lab \n 4. Medicines \n 5. Staff \n 6. Exit");
+        System.out.println("-----------------------");
+
+        Control co = new Control();
+        co.call();
+    }
+}
+
+class Control{
+    Medicines me = new Medicines();
+    Staff st = new Staff();
+    Laboratory l = new Laboratory();
+    Doctor d = new Doctor();
+    Patient pa = new Patient();
+
+    int w1=0, w2=0, w3=0, w4=0, w5=0;
+    int flag=0;
+    MainMenu m1 = new MainMenu();
+    Scanner scan = new Scanner(System.in);
+    int ca = scan.nextInt();
+
+    public void call() throws Exception{
+        switch (ca) {
+            case 1:
+                while (w1 != 3) {
+                    System.out.println();
+                    System.out.println("----------------------------");
+                    System.out.println("~~DOCTOR'S SECTION~~");
+                    System.out.println("\n 1. Add Doctor Info \n 2. Show Doctor List \n 3. Main Menu");
+                    System.out.println("----------------------------");
+
+                    int c1 = scan.nextInt();
+
+                    System.out.println();
+
+                    switch (c1) {
+                        case 1:
+                            d.updateDoctorList();
+                            Thread.sleep(500);
+                            System.out.println();
+                            System.out.println("INFORMATION ADDED SUSCESFULLY...");
+                            flag = 1;
+                            break;
+                        case 2:
+                            if(flag==1) {
+                                d.showDoctorList();
+                            }else {
+                                d.showDoctorList1();
+                            }
+                            break;
+                        case 3:
+                            m1.MM();
+                            break;
+                        default:
+                            System.exit(1);
+                    }
+                }
+                break;
+
+            case 2:
+                while (w2 != 3) {
+                    System.out.println();
+                    System.out.println("----------------------------");
+                    System.out.println("~~PATIENT'S SECTION~~");
+                    System.out.println("\n 1. Add Patient Info \n 2. Show Patient List \n 3. Main Menu");
+                    System.out.println("----------------------------");
+
+                    int c2 = scan.nextInt();
+
+                    System.out.println();
+
+                    switch (c2) {
+                        case 1:
+                            pa.add_Patient();
+                            Thread.sleep(500);
+                            System.out.println();
+                            System.out.println("INFORMATION ADDED SUSCESFULLY...");
+                            break;
+                        case 2:
+                            pa.ShowList();
+                            break;
+                        case 3:
+                            m1.MM();
+                            break;
+                        default:
+                            System.exit(1);
+                    }
+                }
+                break;
+
+            case 3:
+                while (w3 != 3) {
+                    System.out.println();
+                    System.out.println("----------------------------");
+                    System.out.println("~~~LABORATORY SECTION~~~");
+                    System.out.println("\n 1. Add Facility \n 2. Show Facility List \n 3. Main Menu");
+                    System.out.println("----------------------------");
+
+                    int c3 = scan.nextInt();
+
+                    System.out.println();
+
+                    switch (c3) {
+                        case 1:
+                            l.updateFeciList();
+                            Thread.sleep(500);
+                            System.out.println();
+                            System.out.println("INFORMATION ADDED SUSCESFULLY...");
+                            flag=1;
+                            break;
+                        case 2:
+                            if(flag==1) {
+                                l.showFeciList();
+                            }else {
+                                l.showFeciList1();
+                            }
+                            break;
+                        case 3:
+                            m1.MM();
+                            break;
+                        default:
+                            System.exit(1);
+                    }
+                }
+                break;
+
+            case 4:
+                while (w4 != 3) {
+                    System.out.println();
+                    System.out.println("----------------------------");
+                    System.out.println("~~~MEDICINES SECTION~~~");
+                    System.out.println("\n 1. Add Medicines \n 2. Show Medicines List \n 3. Main Menu");
+                    System.out.println("----------------------------");
+
+                    int c4 = scan.nextInt();
+
+                    System.out.println();
+
+                    switch (c4) {
+                        case 1:
+                            me.add_Medicines();
+                            Thread.sleep(500);
+                            System.out.println();
+                            System.out.println("INFORMATION ADDED SUSCESFULLY...");
+                            flag=1;
+                            break;
+                        case 2:
+                            if(flag==1) {
+                                me.show_Medicines();
+                            }else {
+                                me.show_Medicines1();
+                            }
+                            break;
+                        case 3:
+                            m1.MM();
+                            break;
+                        default:
+                            System.exit(1);
+                    }
+                }
+                break;
+
+            case 5:
+                while (w5!=3) {
+                    System.out.println();
+                    System.out.println("----------------------------");
+                    System.out.println("~~STAFF'S SECTION~~");
+                    System.out.println("\n 1. Add Staff Info \n 2. Show Staff List \n 3. Main Menu");
+                    System.out.println("----------------------------");
+
+                    int c5 = scan.nextInt();
+
+                    System.out.println();
+
+                    switch (c5) {
+                        case 1:
+                            st.add_Staff();
+                            Thread.sleep(500);
+                            System.out.println();
+                            System.out.println("INFORMATION ADDED SUSCESFULLY...");
+                            flag = 1;
+                            break;
+                        case 2:
+                            if(flag==1) {
+                                st.show_StaffList();
+                            }else {
+                                st.show_StaffList1();
+                            }
+                            break;
+                        case 3:
+                            m1.MM();
+                            break;
+                        default:
+                            System.exit(1);
+                    }
+                }
+                break;
+
+            case 6:
+                System.out.println();
+                System.out.println("EXIT...");
+                System.exit(1);
+                break;
+
+            default:
+                System.out.println("You Have Entered The Wrong Number");
+        }
+    }
+}
+
+public class Receptionist {
+    public static void main(String[] args) throws Exception {
+        int pas = 1029, id = 4567;
+
+        MainMenu m2 = new MainMenu();
+
+        System.out.println("------------------------------------------------------------------------------");
+        System.out.println("                        WELCOME TO HOSPITAL MANAGEMENT                  ");
+        System.out.println("------------------------------------------------------------------------------");
+        System.out.println("Date: " +LocalDate.now() + " " + LocalDate.now().getDayOfWeek() + "\t \t \t \t \t \t \t \t" + "Time: " +LocalTime.now());
+        try{
+            Thread.sleep(1000);
+        }
+        catch (Exception e){
+            System.out.println("something went wrong");
+        }
+        System.out.println();
+        System.out.print("--------------------");
+        System.out.println("\n 1. Login \n 2. Exit");
+        System.out.println("--------------------");
+
+        Scanner sc = new Scanner(System.in);
+        int ch1 = sc.nextInt();
+
+        switch (ch1){
+            case 1:
+                System.out.println();
+                System.out.println("--------------------");
+                System.out.print("USER ID: ");
+                int id1 = sc.nextInt();
+                System.out.print("Password: ");
+                int pas1 = sc.nextInt();
+                System.out.print("--------------------");
+
+                if(id1==id && pas1==pas) {
+                    m2.MM();
+                }
+                else{
+                    System.out.println("Incorrect Password or User Id!!!");
+                }
+                break;
+
+            case 2:
+                System.out.println();
+                System.out.println("EXIT...");
+                System.exit(1);
+                break;
+
+            default:
+                System.out.println("You Have Entered the Wrong Number");
+        }
+    }
+}

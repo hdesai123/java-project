@@ -1,0 +1,38 @@
+package HospitalManagement;
+import java.util.Scanner;
+
+public class Laboratory {
+    int lNo, price;
+    String testName;
+    Scanner sc = new Scanner(System.in);
+
+    public void updateFeciList(){
+        System.out.println("---------------------------------------------------");
+        System.out.print("Enter the name of test: ");
+        testName = sc.nextLine();
+        System.out.print("Enter the lab number: ");
+        lNo = sc.nextInt();
+        System.out.print("Enter the price: ");
+        price = sc.nextInt();
+        System.out.println("---------------------------------------------------");
+    }
+
+    public void showFeciList(){
+        System.out.println("---------------------------------------------------");
+        System.out.println("TEST NAME"+ "\t\t" + "LAB NO." + "\t\t" + "PRICE");
+        System.out.println("___________________________________________________");
+        System.out.println();
+        System.out.println("Endoscopy \t\t 401 \t\t 2000 \nBlood Test \t\t 402 \t\t 300 \nX Ray \t\t\t 403 \t\t 1000 \nCT Scan \t\t 404 \t\t 3000 \nUrine test \t\t 405 \t\t 400 \nTumor markers \t 406 \t\t 1500 \nMicro-albumin \t 407 \t\t 300 \nHemoglobin \t\t 408 \t\t 600 \nMRI Scans \t\t 409 \t\t 4000 \nNuclear Scans \t 410 \t\t 4500");
+        System.out.println(testName + "\t " + lNo + "\t\t " + price);
+        System.out.println("---------------------------------------------------");
+    }
+
+    public void showFeciList1(){
+        System.out.println("---------------------------------------------------");
+        System.out.println("TEST NAME"+ "\t\t" + "LAB NO." + "\t\t" + "PRICE");
+        System.out.println("___________________________________________________");
+        System.out.println();
+        System.out.println("Endoscopy \t\t 401 \t\t 2000 \nBlood Test \t\t 402 \t\t 300 \nX Ray \t\t\t 403 \t\t 1000 \nCT Scan \t\t 404 \t\t 3000 \nUrine test \t\t 405 \t\t 400 \nTumor markers \t 406 \t\t 1500 \nMicro-albumin \t 407 \t\t 300 \nHemoglobin \t\t 408 \t\t 600 \nMRI Scans \t\t 409 \t\t 4000 \nNuclear Scans \t 410 \t\t 4500");
+        System.out.println("---------------------------------------------------");
+    }
+}
